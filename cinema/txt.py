@@ -14,7 +14,7 @@ for cliente in range(clientes):
 
     nome = input("nome do cliente:")
     idade = int(input("idade do cliente:"))
-    valor = float(input("valor de ingresso:"))
+    valor = int(input("valor de ingresso:"))
     pipoca = int(input("quantas pipocas:"))
     nomes.append(nome)
     idades.append(idade)
@@ -60,12 +60,14 @@ if faixa_etaria == total_idoso:
 n_comprou = []
 comprou = []
 
-for x in pipocas:
+for n in range(len(pipocas)):
+  x = pipocas[n]
+  n_comprou_pipoca = nomes[n]
+  comprou_pipoca = nomes[n]
   if x == 0:
-    n_comprou_pipoca = nomes[x]
     n_comprou.append(n_comprou_pipoca)
   elif x >= 1:
-    comprou_pipoca = nomes[x]
+    
     comprou.append(comprou_pipoca)
 
 if len(n_comprou) >= 1:
@@ -80,13 +82,13 @@ pagaram_menos = []
 
 for x in valores:
   if x >= 25:
-    pagou_mais = nomes[int(x)]
+    pagou_mais = nomes[x]
     pagaram_mais.append(pagou_mais)
   elif x <= 10:
-    pagou_menos = nomes[int(x)]
+    pagou_menos = nomes[x]
     pagaram_menos.append(pagou_menos)
 
 if len(pagaram_mais) >= 1:
- print(f"pagaram mais de 25 reais no ingresso:{n_comprou}")
+ print(f"pagaram mais de 25 reais no ingresso:{pagaram_mais}")
 if len(pagaram_menos) >= 1:
  print(f"pagaram menos de 10 reais no ingresso:{pagaram_menos}")
