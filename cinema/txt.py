@@ -65,10 +65,28 @@ for x in pipocas:
     n_comprou_pipoca = nomes[x]
     n_comprou.append(n_comprou_pipoca)
   elif x >= 1:
-    comprou_pipoca = nomes [x]
+    comprou_pipoca = nomes[x]
     comprou.append(comprou_pipoca)
 
 if len(n_comprou) >= 1:
  print(f"não compraram pipoca:{n_comprou}")
 if len(comprou) >= 1:
  print(f"compraram pipoca:{comprou}")
+
+
+
+pagaram_mais = []
+pagaram_menos = []
+
+for x in valores:
+  if x >= 25:
+    pagou_mais = nomes[int(x)]
+    pagaram_mais.append(pagou_mais)
+  elif x <= 10:
+    pagou_menos = nomes[int(x)]
+    pagaram_menos.append(pagou_menos)
+
+if len(pagaram_mais) >= 1:
+ print(f"pagaram mais de 25 reais no ingresso:{n_comprou}")
+if len(pagaram_menos) >= 1:
+ print(f"pagaram menos de 10 reais no ingresso:{pagaram_menos}")
