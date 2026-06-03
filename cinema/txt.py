@@ -37,23 +37,38 @@ for idade in idades:
 
 #feito por txt a partit daqui
 total_pago = sum(valores)
+movimento = str(0)
+if total_pago <= 499.99:
+  movimento = "fraco"
+elif total_pago >= 500.00 and total_pago <= 1499.99:
+  movimento = "normal"
+elif total_pago >= 1500.00:
+  movimento = "excelente"
 
-print(total_pago)
+print(f"o total arrecadado foi de {total_pago} reais, o movimento foi {movimento}!")
 
-faixa_etaria = str()
-
-print(faixa_etaria)
+faixa_etaria = max(total_adolecente, total_adulto, total_criança, total_idoso)
+if faixa_etaria == total_criança:
+    print("a faixa etaria principal é: infantil")
+if faixa_etaria == total_adolecente:
+    print("a faixa etaria principal é: adolecentes")
+if faixa_etaria == total_adulto:
+    print("a faixa etaria principal é: adultos")
+if faixa_etaria == total_idoso:
+    print("a faixa etaria principal é: idosos")
 
 n_comprou = []
 comprou = []
 
 for x in pipocas:
-  if pipocas[x] == 0:
+  if x == 0:
     n_comprou_pipoca = nomes[x]
     n_comprou.append(n_comprou_pipoca)
-  else:
+  elif x >= 1:
     comprou_pipoca = nomes [x]
     comprou.append(comprou_pipoca)
 
-print(f"não compraram pipoca:{n_comprou}")
-print(f"compraram pipoca:{comprou}")
+if len(n_comprou) >= 1:
+ print(f"não compraram pipoca:{n_comprou}")
+if len(comprou) >= 1:
+ print(f"compraram pipoca:{comprou}")
