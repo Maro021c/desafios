@@ -110,7 +110,7 @@ while True:
   print(" ")
   
   print("//FAIXA ETÁRIA//")
-  
+
   #VERIFICANDO A FAIXA ETÁRIA DOS CLIENTES
   faixa_etaria = max(total_adolecente, total_adulto, total_criança, total_idoso)
   if faixa_etaria == total_criança:
@@ -141,9 +141,9 @@ while True:
   print(" ")
 
   if len(n_comprou) >= 1:
-   print(f"não compraram pipoca:{n_comprou}")
+   print(f"não compraram pipoca: {', '.join(n_comprou)}")
   if len(comprou) >= 1:
-   print(f"compraram pipoca:{comprou}")
+   print(f"compraram pipoca: {', '.join(comprou)}")
 
   #VERIFICANDO QUEM PAGOU MAIS E QUEM PAGOU MENOS
   pagaram_mais = []
@@ -165,9 +165,9 @@ while True:
   print(" ")
 
   if len(pagaram_mais) >= 1:
-   print(f"pagaram mais de 25 reais no ingresso:{pagaram_mais}")
+   print(f"pagaram mais de 25 reais no ingresso:{', '.join(pagaram_mais)}")
   if len(pagaram_menos) >= 1:
-   print(f"pagaram menos de 10 reais no ingresso:{pagaram_menos}")
+   print(f"pagaram menos de 10 reais no ingresso:{', '.join(pagaram_menos)})
   
   print(" ")
   print("//OUTRAS OPÇÕES//")
