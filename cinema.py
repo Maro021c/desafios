@@ -60,39 +60,15 @@ while True:
 
   #RELATORIO DE INFORMAÇÕES
   
-  print(" ")
-  print("//TABELA GERAL//")
-  print(" ")
   
   #MEDIA DO VALOR DOS INGRESSOS VENDIDOS
   
   media_ingressos = sum(valores) / len(valores)   
-  print(f"a media de ingressos foi {media_ingressos} reais")
-  print(" ")
-  
-  #RELATÓRIO DE CLIENTES
-  
-  print(f"Total de Clientes: {clientes}")
-  print(" ")
-  print(f"Total de crianças: {total_criança}")
-  print(f"Total de adolescente: {total_adolecente}")
-  print(f"Total de adultos: {total_adulto}")
-  print(f"Total de idosos: {total_idoso}")
-  print(" ")
-
+ 
   #TOTAL DE PIPOCAS 
-  
-  print(f"Total de pipocas: {sum(pipocas)}")
-  print(" ")
   maior_valor = max(valores)
-  print(f"o maior valor pago foi de:{maior_valor} reais")
   menor_valor = min(valores)
-  print(f"o menor valor pago foi de:{menor_valor} reais")
 
-  print(" ")
-  print("//RESUMO DE GANHOS//")
-  print(" ")
-  
   #RELATÓRIO DO TOTAL ARRECADADO NO FINAL DO DIA/SESSÃO
   total_pago = sum(valores)
   movimento = str(0)
@@ -103,24 +79,17 @@ while True:
   elif total_pago >= 1500.00:
     movimento = "excelente"
 
-  print(f"o total arrecadado foi de {total_pago} reais, o movimento foi {movimento}!")
-
-  print(" ")
-  print("//RESUMO DE PUBLICO//")
-  print(" ")
   
-  print("//FAIXA ETÁRIA//")
-
   #VERIFICANDO A FAIXA ETÁRIA DOS CLIENTES
   faixa_etaria = max(total_adolecente, total_adulto, total_criança, total_idoso)
   if faixa_etaria == total_criança:
-      print("crianças")
+      maioria_idade = str("crianças")
   if faixa_etaria == total_adolecente:
-      print("adolecentes")
+      maioria_idade = str("adolecentes")
   if faixa_etaria == total_adulto:
-      print("adultos")
+      maioria_idade = str("adultos")
   if faixa_etaria == total_idoso:
-      print("idosos")
+      maioria_idade = str("idosos")
   
   #VERIFICANDO QUAIS CLIENTES COMPRARAM E QUAIS NÃO COMPRARAM PIPOCA
   n_comprou = []
@@ -133,17 +102,9 @@ while True:
     if x == 0:
       n_comprou.append(n_comprou_pipoca)
     elif x >= 1:
-      
+    
       comprou.append(comprou_pipoca)
 
-  print(" ")
-  print("//VENDA DE PIPOCAS//")
-  print(" ")
-
-  if len(n_comprou) >= 1:
-   print(f"não compraram pipoca: {', '.join(n_comprou)}")
-  if len(comprou) >= 1:
-   print(f"compraram pipoca: {', '.join(comprou)}")
 
   #VERIFICANDO QUEM PAGOU MAIS E QUEM PAGOU MENOS
   pagaram_mais = []
@@ -160,20 +121,68 @@ while True:
     elif x <= 10:
       pagaram_menos.append(pagou_menos)
 
-  print(" ")
-  print("//RELATORIO DE VALORES FINAIS//")
-  print(" ")
+  print(f''']
+        //TABELA GERAL//
 
-  if len(pagaram_mais) >= 1:
-   print(f"pagaram mais de 25 reais no ingresso:{', '.join(pagaram_mais)}")
-  if len(pagaram_menos) >= 1:
-   print(f"pagaram menos de 10 reais no ingresso:{', '.join(pagaram_menos)})
+        a media de ingressos foi {media_ingressos} reais
+
+        Total de Clientes: {clientes}
+
+        Total de crianças: {total_criança}
+
+        Total de adolescente: {total_adolecente}
+
+        Total de adultos: {total_adulto}
+
+        Total de idosos: {total_idoso}
+
+        Total de pipocas: {sum(pipocas)}
+
+        o maior valor pago foi de:{maior_valor} reais
+
+        o menor valor pago foi de:{menor_valor} reais
+
+        //RESUMO DE GANHOS//
+
+        o total arrecadado foi de {total_pago} reais, o movimento foi {movimento}!
+
+        //RESUMO DE PUBLICO//
+
+        //FAIXA ETÁRIA//
+        
+        a faixa etária do dia foi de {maioria_idade}
+        
+        //VENDA DE PIPOCAS//''')
   
-  print(" ")
-  print("//OUTRAS OPÇÕES//")
-  print(" ")
+  if len(n_comprou) >= 1:
+   print(f'''
+         não compraram pipoca: {', '.join(n_comprou)}
+  ''')
+  if len(comprou) >= 1:
+   print(f'''
+         compraram pipoca: {', '.join(comprou)}
+  ''')
+
+  print(f'''
+        //RELATORIO DE VALORES FINAIS//
+
+        ''')
+  
+  if len(pagaram_mais) >= 1:
+   print(f'''
+         pagaram mais de 25 reais no ingresso:{', '.join(pagaram_mais)}
+  ''')
+  if len(pagaram_menos) >= 1:
+   print(f'''
+         pagaram menos de 10 reais no ingresso:{', '.join(pagaram_menos)}
+  ''')
+
+  print(f'''      
+        //OUTRAS OPÇÕES//
+
+        ''')
 
   #OPÇÃO DE REGISTRAR MAIS UMA SESSÃO/DIA
   escolha = input("quer registrar um novo dia/sessão? s/n:")
-  if escolha == "n":
+  if escolha == "s":
    break
